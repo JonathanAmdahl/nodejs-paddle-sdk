@@ -1,5 +1,5 @@
 {
-  "name": "@invertase/node-paddle-sdk",
+  "name": "@jonathanamdahl/node-paddle-sdk",
   "private": false,
   "version": "0.3.3",
   "description": "A fully typed NodeJS library for integration with Paddle.",
