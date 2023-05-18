@@ -1,6 +1,32 @@
 import { PaddleWebhook } from './webhook';
-
-export type State = 'active' | 'trialing' | 'past_due' | 'deleted' | 'paused';
+export enum State {
+    Active = 'active',
+    Trialing = 'trialing',
+    PastDue = 'past_due',
+    Deleted = 'deleted',
+    Paused = 'paused'
+}
+export declare enum MinimalPaymentMethods {
+    Card = 'card',
+    Paypal = 'paypal',
+}
+declare enum ExtraPaymentMethods {
+    Card = 'card',
+    Paypal = 'paypal',
+    ApplePay = 'apple-pay',
+    WireTransfer = 'wire-transfer'
+}
+declare enum FreePaymentMethod {
+    Free = 'free',
+}
+export declare type PaymentMethods = MinimalPaymentMethods | ExtraPaymentMethods;
+export declare type AllPaymentMethods = MinimalPaymentMethods | ExtraPaymentMethods | FreePaymentMethod;
+export declare enum RefundType {
+    Full = 'full',
+    Vat = 'vat',
+    Partial = 'partial'
+}
+//export type State = 'active' | 'trialing' | 'past_due' | 'deleted' | 'paused';
 
 export type PlanType = 'day' | 'week' | 'month' | 'year';
 

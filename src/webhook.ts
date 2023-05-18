@@ -1,4 +1,4 @@
-import { State } from './types';
+import { State, PaymentMethods, MinimalPaymentMethods, AllPaymentMethods, RefundType } from './types';
 
 export type WebhookEventMap = {
   subscription_created: SubscriptionCreatedWebhook;
@@ -30,12 +30,7 @@ type WebhookBase = {
 };
 
 export type PaddleWebhook =
-  | SubscriptionCreatedWebhook
-  | SubscriptionUpdatedWebhook
-  | SubscriptionCancelledWebhook
-  | SubscriptionPaymentSucceededWebhook
-  | SubscriptionPaymentFailedWebhook
-  | SubscriptionPaymentRefundedWebhook
+  | SubscriptionWebhooks
   | PaymentSucceededWebhook
   | PaymentRefundedWebhook
   | LockerProcessedWebhook
@@ -50,6 +45,14 @@ export type PaddleWebhook =
   | InvoicePaidWebhook
   | InvoiceSentWebhook
   | InvoiceOverdueWebhook;
+
+export type SubscriptionWebhooks = 
+  | SubscriptionCreatedWebhook
+  | SubscriptionUpdatedWebhook
+  | SubscriptionCancelledWebhook
+  | SubscriptionPaymentSucceededWebhook
+  | SubscriptionPaymentFailedWebhook
+  | SubscriptionPaymentRefundedWebhook
 
 export type SubscriptionCreatedWebhook = {
   alert_name: 'subscription_created';
@@ -139,7 +142,7 @@ export type SubscriptionPaymentSucceededWebhook = {
   next_payment_amount: string;
   order_id: string;
   passthrough: string;
-  payment_method: string;
+  payment_method: MinimalPaymentMethods;
   payment_tax: string;
   plan_name: string;
   quantity: string;
@@ -199,7 +202,7 @@ export type SubscriptionPaymentRefundedWebhook = {
   passthrough: string;
   quantity: string;
   refund_reason: string;
-  refund_type: 'full' | 'vat' | 'partial';
+  refund_type: RefundType;
   status: State;
   subscription_id: string;
   subscription_payment_id: string;
@@ -229,7 +232,7 @@ export type PaymentSucceededWebhook = {
   marketing_consent: 0 | 1;
   order_id: string;
   passthrough: string;
-  payment_method: 'card' | 'paypal' | 'free' | 'apple-pay' | 'wire-transfer';
+  payment_method: AllPaymentMethods;
   payment_tax: string;
   product_id: string;
   product_name: string;
@@ -259,7 +262,7 @@ export type PaymentRefundedWebhook = {
   passthrough: string;
   quantity: string;
   refund_reason: string;
-  refund_type: 'full' | 'vat' | 'partial';
+  refund_type: RefundType;
   tax_refund: string;
 } & WebhookBase;
 
@@ -413,7 +416,7 @@ export type InvoicePaidWebhook = {
   date_created: string;
   balance_currency: string;
   payment_tax: string;
-  payment_method: 'card' | 'paypal' | 'apple-pay' | 'wire-transfer';
+  payment_method: PaymentMethods;
   fee: string;
   earnings: string;
   balance_earnings: string;
@@ -486,7 +489,7 @@ export type InvoiceOverdueWebhook = {
   date_created: string;
   balance_currency: string;
   payment_tax: string;
-  payment_method: 'card' | 'paypal' | 'apple-pay' | 'wire-transfer';
+  payment_method: PaymentMethods;
   fee: string;
   earnings: string;
 } & WebhookBase;
