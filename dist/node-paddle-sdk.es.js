@@ -46,6 +46,28 @@ var State;
     State["Deleted"] = "deleted";
     State["Paused"] = "paused";
 })(State || (State = {}));
+var MinimalPaymentMethods;
+(function (MinimalPaymentMethods) {
+    MinimalPaymentMethods["Card"] = "card";
+    MinimalPaymentMethods["Paypal"] = "paypal";
+})(MinimalPaymentMethods || (MinimalPaymentMethods = {}));
+var ExtraPaymentMethods;
+(function (ExtraPaymentMethods) {
+    ExtraPaymentMethods["Card"] = "card";
+    ExtraPaymentMethods["Paypal"] = "paypal";
+    ExtraPaymentMethods["ApplePay"] = "apple-pay";
+    ExtraPaymentMethods["WireTransfer"] = "wire-transfer";
+})(ExtraPaymentMethods || (ExtraPaymentMethods = {}));
+var FreePaymentMethod;
+(function (FreePaymentMethod) {
+    FreePaymentMethod["Free"] = "free";
+})(FreePaymentMethod || (FreePaymentMethod = {}));
+var RefundType;
+(function (RefundType) {
+    RefundType["Full"] = "full";
+    RefundType["Vat"] = "vat";
+    RefundType["Partial"] = "partial";
+})(RefundType || (RefundType = {}));
 
 class PaddleHttpError extends Error {
     constructor(code, message) {
@@ -213,4 +235,4 @@ class PaddleSDK {
     }
 }
 
-export { PaddleSDK, State };
+export { MinimalPaymentMethods, PaddleSDK, RefundType, State };

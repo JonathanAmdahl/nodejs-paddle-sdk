@@ -6,22 +6,22 @@ export enum State {
     Deleted = 'deleted',
     Paused = 'paused'
 }
-export declare enum MinimalPaymentMethods {
+export enum MinimalPaymentMethods {
     Card = 'card',
     Paypal = 'paypal',
 }
-declare enum ExtraPaymentMethods {
+enum ExtraPaymentMethods {
     Card = 'card',
     Paypal = 'paypal',
     ApplePay = 'apple-pay',
     WireTransfer = 'wire-transfer'
 }
-declare enum FreePaymentMethod {
+enum FreePaymentMethod {
     Free = 'free',
 }
-export declare type PaymentMethods = MinimalPaymentMethods | ExtraPaymentMethods;
-export declare type AllPaymentMethods = MinimalPaymentMethods | ExtraPaymentMethods | FreePaymentMethod;
-export declare enum RefundType {
+export type PaymentMethods = MinimalPaymentMethods | ExtraPaymentMethods;
+export type AllPaymentMethods = MinimalPaymentMethods | ExtraPaymentMethods | FreePaymentMethod;
+export enum RefundType {
     Full = 'full',
     Vat = 'vat',
     Partial = 'partial'

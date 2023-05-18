@@ -48,6 +48,28 @@ exports.State = void 0;
     State["Deleted"] = "deleted";
     State["Paused"] = "paused";
 })(exports.State || (exports.State = {}));
+exports.MinimalPaymentMethods = void 0;
+(function (MinimalPaymentMethods) {
+    MinimalPaymentMethods["Card"] = "card";
+    MinimalPaymentMethods["Paypal"] = "paypal";
+})(exports.MinimalPaymentMethods || (exports.MinimalPaymentMethods = {}));
+var ExtraPaymentMethods;
+(function (ExtraPaymentMethods) {
+    ExtraPaymentMethods["Card"] = "card";
+    ExtraPaymentMethods["Paypal"] = "paypal";
+    ExtraPaymentMethods["ApplePay"] = "apple-pay";
+    ExtraPaymentMethods["WireTransfer"] = "wire-transfer";
+})(ExtraPaymentMethods || (ExtraPaymentMethods = {}));
+var FreePaymentMethod;
+(function (FreePaymentMethod) {
+    FreePaymentMethod["Free"] = "free";
+})(FreePaymentMethod || (FreePaymentMethod = {}));
+exports.RefundType = void 0;
+(function (RefundType) {
+    RefundType["Full"] = "full";
+    RefundType["Vat"] = "vat";
+    RefundType["Partial"] = "partial";
+})(exports.RefundType || (exports.RefundType = {}));
 
 class PaddleHttpError extends Error {
     constructor(code, message) {
