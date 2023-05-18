@@ -10,8 +10,7 @@
   "scripts": {
     "lint": "eslint './src/**/*.ts' --quiet --fix",
     "build": "rimraf dist && rollup --config rollup.config.js",
-    "prepublishOnly": "npm run build",
-    "prepack": "npm i && npm run build"
+    "prepublishOnly": "npm run build"
   },
   "author": "",
   "license": "ISC",
