@@ -1,3 +1,5 @@
+This work adds functionality centered around subscriptions. This includes the typings for subscription webhooks (checking if the webhook is subscription specific) and enums for values used by subscription webhooks. This is particularly useful when creating databases with stricter rules around the allowed values.
+
 # Node Paddle SDK
 
 A NodeJS library for integrating with [Paddle](https://paddle.com/).
