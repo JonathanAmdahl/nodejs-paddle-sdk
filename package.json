@@ -3,7 +3,7 @@
   "private": false,
   "version": "0.3.3",
   "description": "A fully typed NodeJS library for integration with Paddle.",
-  "type": "module",
+  "type": "commonjs",
   "main": "dist/node-paddle-sdk.cjs.js",
   "module": "dist/node-paddle-sdk.es.js",
   "types": "dist/index.d.ts",
