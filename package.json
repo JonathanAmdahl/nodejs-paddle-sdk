@@ -11,7 +11,7 @@
     "lint": "eslint './src/**/*.ts' --quiet --fix",
     "build": "rimraf dist && rollup --config rollup.config.js",
     "prepublishOnly": "npm run build",
-    "postinstall": "npm run build"
+    "postinstall": "npm i && npm run build"
   },
   "author": "",
   "license": "ISC",
